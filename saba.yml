@@ -1,0 +1,8 @@
+lang: rust
+spec:
+- location: client
+  codefile:
+    - name: mod
+    - name: google
+
+
