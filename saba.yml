@@ -1,8 +1,39 @@
 lang: rust
+arch: ddd
 spec:
-- location: client
+- location: utils
+  upstream:
+    - name: client
+      codefile:
+        - name: mod
+        - name: google
+
+
+- location: domain
+  upstream:
+    - name: model
+      upstream:
+        - name: oidc_operation
+          codefile:
+            - name: entity
+
+
+- location: infrastructure
+  upstream:
+    - name: repository
+      codefile:
+        - name: oidc_operation
+
+
+- location: usecase
   codefile:
-    - name: mod
-    - name: google
+    - name: oidc_api
 
 
+- location: presentation
+  upstream:
+    - name: http
+      upstream:
+        - name: handler
+          codefile:
+            - name: oidc_operation
