@@ -1,6 +1,6 @@
 use openidconnect::core::CoreClient;
 use std::env;
-use crate::client::r#mod::create_oidc_client;
+use crate::utils::client::r#mod::create_oidc_client;
 
 pub async fn oidc_client() -> CoreClient {
     let client_id = env::var("GOOGLE_CLIENT_ID").unwrap();
