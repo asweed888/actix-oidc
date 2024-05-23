@@ -1,34 +1,8 @@
-pub mod utils {
-    pub mod client {
-        pub mod r#mod;
-        pub mod google;
-    }
+pub mod multiuse {
+    pub mod oidc;
 }
-pub mod domain {
-    pub mod model {
-        pub mod oidc_operation {
-            pub mod entity;
-        }
-    }
-    pub mod repository {
-        pub mod oidc_operation;
-    }
-}
-pub mod infrastructure {
-    pub mod repository {
-        pub mod oidc_operation;
-    }
-}
-pub mod usecase {
-    pub mod oidc_api;
-}
-pub mod presentation {
-    pub mod http {
-        pub mod handler {
-            pub mod oidc_operation;
-        }
-    }
+pub mod google {
+    pub mod oidc;
 }
 // Automatically exported by saba.
-
 
