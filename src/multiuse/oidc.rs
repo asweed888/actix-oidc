@@ -32,7 +32,7 @@ pub struct RevokeRequest {
     pub token: String,
 }
 
-pub trait Usecase {
+pub trait Operation {
     async fn login(
         &self,
         _session: Session,

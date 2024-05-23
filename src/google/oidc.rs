@@ -19,4 +19,4 @@ impl Api {
     }
 }
 
-impl Usecase for Api {}
+impl Operation for Api {}
