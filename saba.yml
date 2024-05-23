@@ -1,39 +1,12 @@
 lang: rust
 arch: ddd
 spec:
-- location: utils
-  upstream:
-    - name: client
-      codefile:
-        - name: mod
-        - name: google
-
-
-- location: domain
-  upstream:
-    - name: model
-      upstream:
-        - name: oidc_operation
-          codefile:
-            - name: entity
-
-
-- location: infrastructure
-  upstream:
-    - name: repository
-      codefile:
-        - name: oidc_operation
-
-
-- location: usecase
+- location: multiuse
   codefile:
-    - name: oidc_api
+    - name: oidc
 
 
-- location: presentation
-  upstream:
-    - name: http
-      upstream:
-        - name: handler
-          codefile:
-            - name: oidc_operation
+- location: google
+  codefile:
+    - name: oidc
+
