@@ -11,12 +11,12 @@ pub async fn client() -> CoreClient {
     create_oidc_client(client_id, client_secret, issuer_url, redirect_url).await
 }
 
-pub struct Api;
+pub struct Handler;
 
-impl Api {
+impl Handler {
     pub fn new() -> Self {
         Self{}
     }
 }
 
-impl Operation for Api {}
+impl Operation for Handler {}

@@ -1,8 +1,8 @@
 pub mod multiuse {
-    pub mod oidc;
+    pub mod auth;
 }
 pub mod google {
-    pub mod oidc;
+    pub mod auth;
 }
 // Automatically exported by saba.
 

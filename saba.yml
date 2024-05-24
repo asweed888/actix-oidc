@@ -3,10 +3,10 @@ arch: ddd
 spec:
 - location: multiuse
   codefile:
-    - name: oidc
+    - name: auth
 
 
 - location: google
   codefile:
-    - name: oidc
+    - name: auth
 
