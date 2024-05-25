@@ -1,5 +1,5 @@
 use std::env;
-use crate::multiuse::oidc::*;
+use crate::multiuse::auth::*;
 
 pub async fn client() -> CoreClient {
     let client_id = env::var("GOOGLE_CLIENT_ID").unwrap();
