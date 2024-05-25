@@ -56,8 +56,8 @@ pub trait Operation {
     async fn callback(
         &self,
         _session: Session,
-        query: web::Query<AuthRequest>,
         data: web::Data<CoreClient>,
+        query: web::Query<AuthRequest>,
     ) -> Result<HttpResponse, Error> {
         let code = AuthorizationCode::new(query.into_inner().code);
         match data.exchange_code(code).request_async(async_http_client).await {
