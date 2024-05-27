@@ -11,12 +11,12 @@ pub async fn client() -> CoreClient {
     create_oidc_client(client_id, client_secret, issuer_url, redirect_url).await
 }
 
-pub struct Handler;
+pub struct GoogleAuthHandler;
 
-impl Handler {
+impl GoogleAuthHandler {
     pub fn new() -> Self {
         Self{}
     }
 }
 
-impl Operation for Handler {}
+impl OidcAuthHandler for GoogleAuthHandler {}

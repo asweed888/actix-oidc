@@ -32,7 +32,7 @@ pub struct RevokeRequest {
     pub token: String,
 }
 
-pub trait Operation {
+pub trait OidcAuthHandler {
     async fn login(
         &self,
         _session: Session,
