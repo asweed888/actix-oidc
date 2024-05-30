@@ -65,6 +65,11 @@ pub trait OidcAuthUseCase {
             Err(e) => Ok(HttpResponse::BadRequest().body(e.to_string())),
         }
     }
+    async fn logout(
+        &self,
+        session: Session,
+        data: web::Data<CoreClient>,
+    ) -> Result<HttpResponse, Error>;
     async fn revoke_token(&self, form: web::Form<RevokeRequest>) -> Result<HttpResponse, Error> {
         let client = reqwest::Client::new();
         let response = client.post("https://oauth2.googleapis.com/revoke")
