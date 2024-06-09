@@ -187,24 +187,6 @@ pub trait OidcAuthApi {
             .finish()
         )
     }
-    async fn logout(
-        &self,
-        session: Session,
-    ) -> Result<HttpResponse, Error> {
-        if let Some(_identity) = session.get::<Identity>("identity")
-            .map_err(|_| SessionError::ReadSessionError("unknown".to_string()))? {
-
-            session.purge();
-            Ok(
-                HttpResponse::TemporaryRedirect()
-                .insert_header((LOCATION, env::public_page_root().unwrap()))
-                .finish()
-            )
-        }
-        else {
-            Ok(HttpResponse::Unauthorized().finish())
-        }
-    }
 }
 
 

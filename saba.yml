@@ -1,6 +1,10 @@
 lang: rust
 arch: ddd
 spec:
+- location: src
+  codefile:
+    - name: oidc
+
 - location: multiuse
   codefile:
     - name: auth

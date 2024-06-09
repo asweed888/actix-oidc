@@ -1,3 +1,4 @@
+pub mod oidc;
 pub mod multiuse {
     pub mod auth;
     pub mod error;
