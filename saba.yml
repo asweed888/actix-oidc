@@ -4,6 +4,8 @@ spec:
 - location: multiuse
   codefile:
     - name: auth
+    - name: error
+    - name: env
 
 
 - location: google
