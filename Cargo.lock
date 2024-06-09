@@ -99,6 +99,7 @@ dependencies = [
  "actix-web",
  "anyhow",
  "async-trait",
+ "derive_more",
  "openidconnect",
  "reqwest 0.12.4",
  "serde",
