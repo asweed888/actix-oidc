@@ -49,7 +49,7 @@ pub struct Identity {
     pub user: User
 }
 
-pub trait OidcAuthUseCase {
+pub trait OidcAuthApi {
     async fn login(
         &self,
         session: Session,
