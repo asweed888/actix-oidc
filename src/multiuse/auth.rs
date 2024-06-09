@@ -53,7 +53,7 @@ pub trait OidcAuthUseCase {
     async fn login(
         &self,
         session: Session,
-        client: CoreClient,
+        client: web::Data<CoreClient>,
     ) -> Result<HttpResponse, Error> {
         // 認証済みの場合はsecret_page_rootへリダイレクト
         if let Some(_identity) = session.get::<Identity>("identity")
@@ -92,7 +92,7 @@ pub trait OidcAuthUseCase {
     async fn callback(
         &self,
         session: Session,
-        client: CoreClient,
+        client: web::Data<CoreClient>,
         query: web::Query<AuthRequest>,
     ) -> Result<HttpResponse, Error> {
         // 認証済みの場合はsecret_page_rootへリダイレクト
