@@ -4,7 +4,7 @@ use crate::multiuse::env;
 
 pub async fn login(
     session: Session,
-    client: web::Data<CoreClient>,
+    client: CoreClient,
 ) -> Result<HttpResponse, Error> {
     // 認証済みの場合はsecret_page_rootへリダイレクト
     if let Some(_identity) = session.get::<Identity>("identity")
@@ -43,7 +43,7 @@ pub async fn login(
 
 pub async fn callback(
     session: Session,
-    client: web::Data<CoreClient>,
+    client: CoreClient,
     query: web::Query<AuthRequest>,
 ) -> Result<HttpResponse, Error> {
     // 認証済みの場合はsecret_page_rootへリダイレクト
